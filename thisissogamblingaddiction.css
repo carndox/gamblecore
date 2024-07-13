@@ -1,0 +1,220 @@
+/* Existing CSS */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: AllOrNothing;
+    src: url("Rantika-RpwX6.ttf");
+}
+
+body {
+    background-color: rgb(20, 18, 18);
+    font-family: 'AllOrNothing', sans-serif;
+    color: white;
+    position: relative;
+}
+
+#titlething {
+    font-size: 60px;
+    text-align: center;
+    background-color: black;
+    padding: 20px;
+}
+
+.group {
+    width: 100%;
+    background-color: rgb(20, 18, 18);
+    padding: 50px 0;
+    text-align: center;
+}
+
+.subgroup {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgroll {
+    width: 150px;
+    height: 150px;
+    border: 1px solid rgb(124, 124, 124);
+    transition: transform 0.3s;
+    object-fit: cover;
+}
+
+.imgroll:hover {
+    transform: scale(1.1);
+}
+
+#lol {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.text {
+    width: 150px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.text p {
+    margin: 0;
+}
+
+.group2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px 0;
+    background-color: rgb(21, 21, 21);
+    border-top: 1px solid grey;
+    position: relative;
+}
+
+#counter {
+    font-size: 50px;
+    margin: 0 20px;
+    flex: 0 0 auto;
+    min-width: 100px;
+    text-align: center;
+}
+
+button {
+    font-size: 40px;
+    width: 200px;
+    margin: 10px 20px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, border 0.2s, color 0.2s;
+    border: none;
+    color: white;
+    background-color: #333;
+}
+
+button:hover {
+    transform: translateY(-10px);
+}
+
+button:active {
+    transform: translateY(-10px) scale(0.95);
+}
+
+#rollone:hover {
+    background-color: purple;
+}
+
+#rollten:hover {
+    background-color: gold;
+}
+
+@keyframes rollAnimation {
+    0% { transform: scale(1); opacity: 0; }
+    50% { transform: scale(1.2); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.imgroll.rolling, .text .rolling {
+    animation: rollAnimation 0.6s ease-in-out;
+}
+
+@keyframes slideIn {
+    0% {
+        right: -400px;
+        opacity: 0;
+    }
+    100% {
+        right: 20px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(600px);
+    }
+}
+
+.achievement-banner {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px; /* End position */
+    width: 350px;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: left;
+    z-index: 1000;
+    font-family: 'AllOrNothing', sans-serif;
+    color: white;
+}
+
+.achievement-banner img {
+    width: 50px;
+    height: 50px;
+    border: 2px solid white;
+    float: left;
+    margin-right: 15px;
+}
+
+.achievement-banner h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.achievement-banner p {
+    margin: 5px 0 0;
+    font-size: 14px;
+}
+
+.achievement-banner.show {
+    display: block;
+    animation: slideIn 1s ease-out forwards;
+}
+
+.achievement-banner.hide {
+    animation: fadeOut 1s ease-out forwards;
+}
+
+@media (max-width: 1366px) {
+    #titlething {
+        font-size: 40px;
+        padding: 10px;
+    }
+
+    .imgroll {
+        width: 100px;
+        height: 100px;
+    }
+
+    .text {
+        width: 100px;
+    }
+
+    button {
+        font-size: 30px;
+        width: 150px;
+    }
+
+    #counter {
+        font-size: 40px;
+        margin: 0 10px;
+    }
+}
